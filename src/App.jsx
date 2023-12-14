@@ -6,6 +6,7 @@ import Footer from "./components/footer/Footer.jsx"
 import Header from "./components/header/Header.jsx"
 import PostsList from "./components/posts-list/PostsList.jsx"
 import Home from "./components/home/Home.jsx"
+import Login from "./components/login/Login.jsx"
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <Header/>
       <Routes>
         <Route path={Path.Home} element={<Home />} />
-        <Route path='/posts' element={<PostsList />} />
+        <Route path={Path.Posts} element={<PostsList />} />
+        <Route path={Path.Login} element={<Login />} />
       </Routes>
 
       <Footer/>
