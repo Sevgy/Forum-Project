@@ -1,4 +1,4 @@
-import styles from './PostsList.module.css'
+import styles from './PostList.module.css'
 
 
 export default function PostsList() {

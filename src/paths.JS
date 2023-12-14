@@ -1,7 +1,7 @@
 const Path = {
     Home: '/',
     Posts: '/posts',
-    Profile: '/profile',
+    Create: '/posts/create',
     Login: '/login',
     Register: '/register',
     LogOut: '/logout',
