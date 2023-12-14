@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+export default function Header() {
     return (
         <>
             <Navbar bg="dark" data-bs-theme="dark">
@@ -22,5 +22,4 @@ const Header = () => {
     );
 };
 
-export default Header;
 
