@@ -1,0 +1,14 @@
+.comment-box {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    /* Add a flex display for aligning commenter info and content */
+    align-items: flex-start;
+    /* Align items at the start of the flex container */
+}
+
+.comment-info {
+    margin-right: 10px;
+}

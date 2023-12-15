@@ -13,6 +13,7 @@ import Login from './components/login/Login.jsx';
 import Register from './components/register/Register.jsx';
 import PostCreate from './components/post-create/PostCreate.jsx';
 import Logout from './components/logout/Logout.jsx';
+import Thread from './components/thread/Thread.jsx';
 
 function App() {
     const navigate = useNavigate();
@@ -65,6 +66,7 @@ function App() {
                 <Routes>
                     <Route path={Path.Home} element={<Home />} />
                     <Route path={Path.Posts} element={<PostsList />} />
+                    <Route path={Path.Thread} element={<Thread />} />
                     <Route path={Path.Create} element={<PostCreate />} />
                     <Route path={Path.Login} element={<Login />} />
                     <Route path={Path.Register} element={<Register />} />
