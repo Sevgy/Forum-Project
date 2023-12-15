@@ -23,7 +23,7 @@ export default function Header() {
                         {isAuthenticated && (
                             <>
                                 <Nav.Link as={Link} to="posts/create">Create Posts</Nav.Link>
-                                <Nav.Link as={Link} to="/logout">Log Out</Nav.Link>
+                                <Nav.Link as={Link} to='/logout'>Log Out</Nav.Link>
                             </>
                         )}
 
@@ -33,7 +33,7 @@ export default function Header() {
                             <Nav.Link as={Link} to="/register">Register</Nav.Link>
                             </>
                         )}
-                        
+
                     </Nav>
                 </Container>
             </Navbar>
