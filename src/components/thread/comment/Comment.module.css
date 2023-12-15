@@ -1,14 +1,64 @@
 .comment-box {
     background-color: #f9f9f9;
-    padding: 10px;
+    padding: 20px;
     border-radius: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     display: flex;
-    /* Add a flex display for aligning commenter info and content */
-    align-items: flex-start;
-    /* Align items at the start of the flex container */
 }
 
 .comment-info {
+    display: flex;
+    flex-direction: column;
+    /* Align items in a column */
+}
+
+.comment-text {
+    color: #555;
+    margin: 0;
+    /* Reset margin */
+}
+
+.comment-buttons {
+    display: flex;
+    margin-top: 5px;
+    /* Adjust as needed */
+}
+
+.comment-button {
+    padding: 5px 5px;
+    /* Adjust size */
+    margin-right: 5px;
+    /* Adjust spacing */
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-button {
+    background-color: #333;
+    /* Graphite color */
+    color: white;
+}
+
+.delete-button {
+    background-color: #e53935;
+    /* Red color */
+    color: white;
+}
+
+.comment-email {
+    margin: 0;
+    /* Reset margin */
+    margin-top: 5px;
+    /* Add margin to separate "Author:" and email */
+}
+
+.comment-divider {
+    border-left: 1px solid black;
+    height: 100%;
     margin-right: 10px;
+    margin-left: 20px;
+}
+
+.comment-content {
+    flex-grow: 1;
 }
