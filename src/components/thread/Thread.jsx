@@ -1,6 +1,23 @@
+import { useContext, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+
+import * as postService from '../../services/postService.js';
+import AuthContext from '../../context/authContext.js'
+
 import styles from './Thread.module.css'
 
 export default function Thread() {
+    const { email } = useContext(AuthContext);
+    const [thread, setThread] = useState({});
+    const { postId } = useParams();
+
+    useEffect(() => {
+
+        postService.getOne(postId)
+            .then(setThread);
+
+    }, [postId])
+
     return (
         <div className={styles['thread-container']}>
             <div className={styles['post-info']}>
@@ -9,8 +26,8 @@ export default function Thread() {
                         <p>Poster: John Doe</p>
                     </div>
                     <div className={styles['post-content']}>
-                        <h2 className={styles['post-title']}>PlaceHolder</h2>
-                        <p className={styles['post-text']}>PlaceHolder</p>
+                        <h2 className={styles['post-title']}>{thread.title}</h2>
+                        <p className={styles['post-text']}>{thread.text}</p>
                     </div>
                 </div>
             </div>
