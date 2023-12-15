@@ -1,18 +1,18 @@
-import { Route, Routes, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { Route, Routes, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
-import Path from './paths.JS'
-import * as authService from './services/authService.js'
-import AuthContext from './context/authContext.js'
+import Path from './paths.JS';
+import * as authService from './services/authService.js';
+import AuthContext from './context/authContext.js';
 
-import Footer from './components/footer/Footer.jsx'
-import Header from './components/header/Header.jsx'
-import PostsList from './components/post-list/PostList.jsx'
-import Home from './components/home/Home.jsx'
-import Login from './components/login/Login.jsx'
-import Register from './components/register/Register.jsx'
-import PostCreate from './components/post-create/PostCreate.jsx'
-import Logout from './components/logout/Logout.jsx'
+import Footer from './components/footer/Footer.jsx';
+import Header from './components/header/Header.jsx';
+import PostsList from './components/post-list/PostList.jsx';
+import Home from './components/home/Home.jsx';
+import Login from './components/login/Login.jsx';
+import Register from './components/register/Register.jsx';
+import PostCreate from './components/post-create/PostCreate.jsx';
+import Logout from './components/logout/Logout.jsx';
 
 function App() {
     const navigate = useNavigate();
