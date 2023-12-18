@@ -14,6 +14,7 @@ import Register from './components/register/Register.jsx';
 import PostCreate from './components/post-create/PostCreate.jsx';
 import Logout from './components/logout/Logout.jsx';
 import Thread from './components/thread/Thread.jsx';
+import PostEdit from './components/post-edit/PostEdit.jsx';
 
 function App() {
     const navigate = useNavigate();
@@ -55,6 +56,7 @@ function App() {
         logoutHandler,
         username: auth.username || auth.email,
         email: auth.email,
+        userId: auth._id,
         isAuthenticated: !!auth.accessToken,
     };
 
@@ -71,6 +73,7 @@ function App() {
                     <Route path={Path.Login} element={<Login />} />
                     <Route path={Path.Register} element={<Register />} />
                     <Route path={Path.Logout} element={<Logout />} />
+                    <Route path={Path.Edit} element={<PostEdit />}/> 
                 </Routes>
 
                 <Footer />

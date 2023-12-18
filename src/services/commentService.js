@@ -13,6 +13,12 @@ export const getAll = async (postId) => {
     return result;
 }
 
+export const getOne = async (commentId) => {
+    const result = await request.get(`${baseUrl}/${commentId}`);
+
+    return result;
+}
+
 export const create = async (postId, text) => {
     const newComment = await request.post(baseUrl, {
         postId,
@@ -21,3 +27,12 @@ export const create = async (postId, text) => {
 
     return newComment;
 }
+
+export const edit = async (commentId, commentData) => {
+    const result = await request.put(`${baseUrl}/${commentId}`, commentData);
+
+    return result;
+};
+
+export const removeComment = async (commentId) => request.remove(`${baseUrl}/${commentId}`)
+    

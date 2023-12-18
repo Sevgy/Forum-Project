@@ -5,6 +5,7 @@ export default function PostListItem({
     _id,
     title,
     text,
+    email,
 }) {
     return (
         <div className={styles['post-list-item']}>
@@ -12,8 +13,8 @@ export default function PostListItem({
                 <h3 className={styles['post-title']}>{title}</h3>
                 <p className={styles['post-content']}>{text}</p>
                 <div className={styles['post-meta']}>
-                    <span>Author: Anonymous</span>
-                    <span>Posted on: Not determined yet</span>
+                    <span>Author: {email}</span>
+                    {/* <span>Posted on: Not determined yet</span> */}
                 </div>
             </Link>
         </div>

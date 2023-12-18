@@ -10,10 +10,14 @@ export default function useForm(submitHandler, initialValues) {
         }))
     };
 
+    const resetValues = () => {
+        setValues(initialValues)
+    }
+
     const onSubmit = (e) => {
         e.preventDefault();
 
-        submitHandler(values);
+        submitHandler(values, resetValues);
     }
 
     return {

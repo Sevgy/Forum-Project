@@ -2,73 +2,100 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-  }
-  
-  .post-info {
+}
+
+.post-info {
     margin-bottom: 20px;
-  }
-  
-  .post-content-box {
+}
+
+.post-content-box {
     background-color: #f9f9f9;
     padding: 15px;
     border-radius: 8px;
     display: flex;
-  }
-  
-  .poster-info {
+}
+
+.poster-info {
     padding-right: 20px;
     border-right: 1px solid #ddd;
-  }
-  
-  .post-content {
+}
+
+.post-content {
     flex-grow: 1;
-  }
-  
-  .post-title {
+}
+
+.post-title {
     margin-bottom: 10px;
-  }
-  
-  .post-text {
+}
+
+.post-text {
     color: #555;
-  }
-  
-  .comments-container {
+}
+
+.comments-container {
     margin-bottom: 20px;
-  }
-  
-  .comment-box {
+}
+
+.comment-box {
     background-color: #f9f9f9;
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 15px;
     display: flex;
-  }
-  
-  .comment-info {
+}
+
+.comment-info {
     padding-right: 20px;
     border-right: 1px solid #ddd;
-  }
-  
-  .comment-content {
+}
+
+.comment-content {
     flex-grow: 1;
-  }
-  
-  .comment-email {
+}
+
+.comment-email {
     font-weight: bold;
     margin-bottom: 5px;
-  }
-  
-  .comment-text {
+}
+
+.comment-text {
     color: #555;
-  }
-  
-  .comment-divider {
+}
+
+.comment-divider {
     border-left: 1px solid #ddd;
     margin: 0 10px;
-  }
-  
-  .add-comment-form {
+}
+
+.add-comment-form {
     background-color: #f0f0f0;
     padding: 15px;
     border-radius: 8px;
-  }
+}
+
+.comment-buttons {
+    display: flex;
+    margin-top: 5px;
+    /* Adjust as needed */
+}
+
+.comment-button {
+    padding: 5px 5px;
+    /* Adjust size */
+    margin-right: 5px;
+    /* Adjust spacing */
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-button {
+    background-color: #333;
+    /* Graphite color */
+    color: white;
+}
+
+.delete-button {
+    background-color: #e53935;
+    /* Red color */
+    color: white;
+}

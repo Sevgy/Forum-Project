@@ -19,3 +19,11 @@ export const getOne = async (postId) => {
 
     return result;
 }
+
+export const edit = async (postId, postData) => {
+    const result = await request.put(`${baseUrl}/${postId}`, postData);
+
+    return result;
+};
+
+export const removePost = async (postId) => request.remove(`${baseUrl}/${postId}`)

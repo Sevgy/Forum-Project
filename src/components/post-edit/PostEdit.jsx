@@ -1,52 +1,60 @@
-import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
 
-import useForm from '../../hooks/useForm.js';
 import * as postService from '../../services/postService.js';
 import Path from '../../paths.js';
 import AuthContext from '../../context/authContext.js';
 
-import styles from './PostCreate.module.css';
+import styles from './PostEdit.module.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-const CreatePostFormKeys = {
-    Title: 'title',
-    Text: 'text',
-}
-
 export default function PostCreate() {
-    const {email} = useContext(AuthContext)
     const navigate = useNavigate();
+    const { postId } = useParams();
+    const { email } = useContext(AuthContext)
+    const [post, setPost] = useState({
+        title: '',
+        text: '',
+    })
 
-    const createPostSubmitHandler = async (values) => {
-        values['email'] = email
-        await postService.create(values)
+    useEffect(() => {
+        postService.getOne(postId)
+            .then(result => {
+                setPost(result);
+            });
+    }, [postId]);
 
-        console.log(values);
+    const onChange = (e) => {
+        setPost(state => ({
+            ...state,
+            [e.target.name]: e.target.value
+        }))
+    }
+
+    const editPostSubmitHandler = async (e) => {
+        e.preventDefault();
+
+        post['email'] = email
+        await postService.edit(postId, post);
 
         navigate(Path.Posts);
     }
-
-    const { values, onChange, onSubmit } = useForm(createPostSubmitHandler, {
-        [CreatePostFormKeys.Title]: '',
-        [CreatePostFormKeys.Text]: '',
-    })
 
 
     return (
         <div className={styles['create-post-background']}>
             <div className={styles['create-post-container']}>
                 <div className={styles['create-post-form-container']}>
-                    <h2>Create a New Post</h2>
-                    <Form onSubmit={onSubmit}>
+                    <h2>Edit a Post</h2>
+                    <Form onSubmit={editPostSubmitHandler}>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Label>Post Title</Form.Label>
                             <Form.Control
                                 type="text"
                                 name="title"
                                 onChange={onChange}
-                                values={values[CreatePostFormKeys.Title]}
+                                values={post.title}
                             />
                         </Form.Group>
 
@@ -57,12 +65,12 @@ export default function PostCreate() {
                                 rows={4}
                                 name="text"
                                 onChange={onChange}
-                                values={values[CreatePostFormKeys.Text]}
+                                values={post.text}
                             />
                         </Form.Group>
 
                         <Button variant="primary" type="submit">
-                            Create
+                            Edit
                         </Button>
                     </Form>
 
