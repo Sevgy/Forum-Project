@@ -1,9 +1,7 @@
-import { Route, Routes, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
 import Path from './paths.JS';
-import * as authService from './services/authService.js';
-import AuthContext from './context/authContext.js';
+import { AuthProvider} from './context/authContext.jsx';
 
 import Footer from './components/footer/Footer.jsx';
 import Header from './components/header/Header.jsx';
@@ -17,51 +15,8 @@ import Thread from './components/thread/Thread.jsx';
 import PostEdit from './components/post-edit/PostEdit.jsx';
 
 function App() {
-    const navigate = useNavigate();
-
-    const [auth, setAuth] = useState(() => {
-        localStorage.removeItem('accessToken');
-
-        return {};
-    });
-
-    const loginSubmitHandler = async (values) => {
-        const result = await authService.login(values.email, values.password);
-
-        setAuth(result);
-
-        localStorage.setItem('accessToken', result.accessToken);
-
-        navigate(Path.Home);
-    }
-
-    const registerSubmitHandler = async (values) => {
-        const result = await authService.register(values.email, values.password);
-
-        setAuth(result);
-
-        localStorage.setItem('accessToken', result.accessToken);
-
-        navigate(Path.Home);
-    }
-
-    const logoutHandler = () => {
-        setAuth({});
-        localStorage.removeItem('accessToken');
-    }
-
-    const values = {
-        loginSubmitHandler,
-        registerSubmitHandler,
-        logoutHandler,
-        username: auth.username || auth.email,
-        email: auth.email,
-        userId: auth._id,
-        isAuthenticated: !!auth.accessToken,
-    };
-
     return (
-        <AuthContext.Provider value={values}>
+        <AuthProvider>
             <>
                 <Header />
 
@@ -78,7 +33,7 @@ function App() {
 
                 <Footer />
             </>
-        </AuthContext.Provider>
+        </AuthProvider>
     )
 }
 

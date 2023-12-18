@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 
 import * as postService from '../../services/postService.js';
 import * as commentService from '../../services/commentService.js';
-import AuthContext from '../../context/authContext.js';
+import AuthContext from '../../context/authContext.jsx';
 import useForm from '../../hooks/useForm.js';
 
 import Comment from './comment/Comment.jsx';

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import AuthContext from '../../context/authContext.js';
+import AuthContext from '../../context/authContext.jsx';
 import useForm from '../../hooks/useForm.js';
 
 import styles from './Register.module.css';

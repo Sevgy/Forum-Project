@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import useForm from '../../hooks/useForm.js';
 import * as postService from '../../services/postService.js';
 import Path from '../../paths.js';
-import AuthContext from '../../context/authContext.js';
+import AuthContext from '../../context/authContext.jsx';
 
 import styles from './PostCreate.module.css';
 import Form from 'react-bootstrap/Form';

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import useForm from '../../hooks/useForm.js';
-import AuthContext from '../../context/authContext.js';
+import AuthContext from '../../context/authContext.jsx';
 
 import styles from './Login.module.css';
 import Button from 'react-bootstrap/Button';

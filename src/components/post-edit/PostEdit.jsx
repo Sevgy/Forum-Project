@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from 'react';
 
 import * as postService from '../../services/postService.js';
 import Path from '../../paths.js';
-import AuthContext from '../../context/authContext.js';
+import AuthContext from '../../context/authContext.jsx';
 
 import styles from './PostEdit.module.css';
 import Form from 'react-bootstrap/Form';
@@ -54,7 +54,7 @@ export default function PostCreate() {
                                 type="text"
                                 name="title"
                                 onChange={onChange}
-                                values={post.title}
+                                value={post.title}
                             />
                         </Form.Group>
 
@@ -65,7 +65,7 @@ export default function PostCreate() {
                                 rows={4}
                                 name="text"
                                 onChange={onChange}
-                                values={post.text}
+                                value={post.text}
                             />
                         </Form.Group>
 

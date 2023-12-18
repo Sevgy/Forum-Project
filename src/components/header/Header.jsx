@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
-import AuthContext from '../../context/authContext.js';
+import AuthContext from '../../context/authContext.jsx';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
