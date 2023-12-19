@@ -30,16 +30,20 @@ export default function Home() {
 
                 <section className={styles['recent-posts']}>
                     <h2>Most Recent Posts</h2>
-                    {recentPosts.map(post => (
-                        // Wrap each post box with a Link to its thread
-                        <Link key={post._id} to={`/posts/${post._id}`} className={styles['post-box-link']}>
-                            <div className={styles['post-box']}>
-                                <h2>{post.title}</h2>
-                                <p className={styles['post-content']}>{post.text}</p>
-                                <p className={styles['post-author']}>Posted by: {post.email}</p>
-                            </div>
-                        </Link>
-                    ))}
+                    {recentPosts.length === 0 ? (
+                        <p>No recent posts available.</p>
+                    ) : (
+                        recentPosts.map(post => (
+                            // Wrap each post box with a Link to its thread
+                            <Link key={post._id} to={`/posts/${post._id}`} className={styles['post-box-link']}>
+                                <div className={styles['post-box']}>
+                                    <h2>{post.title}</h2>
+                                    <p className={styles['post-content']}>{post.text}</p>
+                                    <p className={styles['post-author']}>Posted by: {post.email}</p>
+                                </div>
+                            </Link>
+                        ))
+                    )}
                 </section>
             </main>
         </div>
