@@ -2,10 +2,9 @@ import { createContext, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
 import * as authService from '../services/authService.js'
+import Path from "../paths.js";
 
 const AuthContext = createContext();
-
-AuthContext.displayName = 'AuthContext';
 
 export const AuthProvider = ({
     children,
@@ -61,5 +60,7 @@ export const AuthProvider = ({
     );
 
 }
+
+AuthContext.displayName = 'AuthContext';
 
 export default AuthContext;
