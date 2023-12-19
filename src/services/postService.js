@@ -8,6 +8,16 @@ export const getAll = async () => {
     return Object.values(result);
 }
 
+export const getRecentPosts = async (limit = 3) => {
+    const allPosts = await getAll();
+
+    // Sort posts based on creation time in descending order
+    const sortedPosts = allPosts.sort((a, b) => b._createdOn - a._createdOn);
+
+    // Return only the three most recent posts
+    return sortedPosts.slice(0, limit);
+};
+
 export const create = async (postData) => {
     const result = await request.post(baseUrl, postData);
 

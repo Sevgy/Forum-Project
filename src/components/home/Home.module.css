@@ -1,19 +1,55 @@
 .home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .header {
-    background: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0.5));
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .main-content {
-    text-align: center;
-    padding: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.main-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.recent-posts {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 800px; /* Adjust the maximum width as needed */
+}
+
+.post-box {
+  width: 120%; /* Adjust the width as needed */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  margin: 10px auto;
+  padding: 20px;
+  align-items: center;
+}
+
+.post-box h2 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.post-content {
+  font-size: 14px; /* Adjust the font size as needed */
+  margin-bottom: 10px;
+}
+
+.post-author {
+  font-style: italic;
+  color: #555;
+}
+
+
+.header {
+  background: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0.5));
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.post-box-link {
+  text-decoration: none; /* Remove the default link underline */
+  color: inherit; /* Inherit the color from the parent */
+}
