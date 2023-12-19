@@ -35,7 +35,15 @@ export default function Comment({
 
     const handleEdit = (e) => {
         e.preventDefault();
+
+        if (!data.text.trim()) {
+            // If comment text is empty, show an alert and do not proceed with form submission
+            alert('Comment text cannot be empty');
+            return;
+        }
+
         onEdit(comment._id, data)
+        handleClose();
     };
 
     return (

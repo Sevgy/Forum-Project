@@ -49,8 +49,6 @@ export default function Login() {
                 // If all validations pass, call the loginSubmitHandler
                 await loginSubmitHandler(values);
 
-                // If the loginSubmitHandler completes without errors, you can perform additional actions
-                navigate(Path.Home);
             }
         } catch (error) {
             console.error('Error during login:', error);

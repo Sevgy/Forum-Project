@@ -31,6 +31,13 @@ export default function Thread() {
     }, [postId])
 
     const createCommentSubmitHandler = async (values, resetValues) => {
+
+        if (!values.text.trim()) {
+            // If comment text is empty, show an alert and do not proceed with form submission
+            alert('Comment text cannot be empty');
+            return;
+        }
+
         const newComment = await commentService.create(
             postId,
             values['text'],
@@ -52,6 +59,9 @@ export default function Thread() {
     };
 
     const editCommentButtonHandler = async (commentId, data) => {
+
+       
+
         data['postId'] = postId;
         await commentService.edit(commentId, data)
             .then((editedComment) => {
