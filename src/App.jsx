@@ -14,6 +14,7 @@ import Logout from './components/logout/Logout.jsx';
 import Thread from './components/thread/Thread.jsx';
 import PostEdit from './components/post-edit/PostEdit.jsx';
 import AuthGuard from './components/guards/AuthGuard.jsx';
+import NotFound from './components/not-found/NotFound.jsx';
 
 function App() {
     return (
@@ -27,6 +28,7 @@ function App() {
                     <Route path={Path.Thread} element={<Thread />} />
                     <Route path={Path.Login} element={<Login />} />
                     <Route path={Path.Register} element={<Register />} />
+                    <Route path='*' element={<NotFound />}/>
 
                     <Route element={<AuthGuard />}>
 
